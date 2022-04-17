@@ -13,6 +13,20 @@ old_coroutine_wrap = replaceclosure(coroutine.wrap, newcclosure(function(func, .
  
   return old_coroutine_wrap(func, ...);
 end));
+
+local virtual_input_manager = game:GetService("VirtualInputManager");
+
+local roll_function = getsenv(game:GetService("Players").LocalPlayer.Character:WaitForChild("CharacterHandler").InputClient).Roll;
+local remote_constant_index = table.find(getconstants(roll_function), "Unblock");
+
+return function(remote_name)
+    local old_upvalues = getupvalues(roll_function);
+
+    setupvalue(roll_function, 1, {
+        FindEffect = function(self, effect_name)
+            return effect_name == "Blocking";
+        end;
+    });
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --finding urself idk why
 local players = game:GetService("Players")
