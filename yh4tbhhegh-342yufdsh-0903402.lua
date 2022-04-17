@@ -5,6 +5,8 @@ old_coroutine_wrap = replaceclosure(coroutine.wrap, newcclosure(function(func, .
       local caller_info = getinfo(5, "f");
      
        if caller_info and caller_info.func == pcall then
+          game:GetService("ReplicatedStorage")
+          wait(3)
            return coroutine.yield();
        end;
   end;
