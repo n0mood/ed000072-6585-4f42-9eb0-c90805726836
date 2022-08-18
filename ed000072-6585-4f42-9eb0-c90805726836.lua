@@ -39,7 +39,7 @@ print("Bypass Success!")
 wait(5)
 print("Booting Up Tiality Hub....")
 wait(7)
-loadstring(game:HttpGet("https://gist.githubusercontent.com/n0mood/7087ad7e33d2d0ccab364a7c9cc52a01/raw/ac8c5d33eb6add0734e4b46c2606d88036a2f8bd/obfuscated.lua"))()
+loadstring(game:HttpGet(""))()
 
 wait(2)
 print("Tiality Hub Has Been Loaded!")
